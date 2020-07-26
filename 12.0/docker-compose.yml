@@ -2,17 +2,11 @@ version: '2'
 services:
   web:
     image: f360/odoo:12.0
-    depends_on:
-      - db
+
     ports:
       - "8069:8069"
     volumes:
       - ./mnt/odoo:/var/lib/odoo
       - ./mnt/extra-addons:/mnt/extra-addons
-  db:
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD=Madden03
-      - POSTGRES_USER=odoo
-      - POSTGRES_HOST=db-fin360.cluster-c5qnjw2hzrti.us-east-1.rds.amazonaws.com
+
 
